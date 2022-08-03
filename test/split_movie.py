@@ -150,6 +150,11 @@ class SplitMovieTest(unittest.TestCase):
         subtitles = LoadSubtitleFile(subtitle_file)
         self.assertEqual(type(subtitles[0]["body"]), str)
 
+    def test_LoadSubtitleFile_multiline(self):
+        subtitle_file = "test/resource/test2.srt"
+        subtitles = LoadSubtitleFile(subtitle_file)
+        self.assertEqual(subtitles[0]["body"], "字幕1\n字幕3")
+
     def test_GetTime_start_hour(self):
         time_format = "00:01:02,345 --> 06:07:08,901"
         start, _ = GetTime(time_format)

@@ -95,7 +95,7 @@ def LoadSubtitleFile(file: str):
         start, end = GetTime(subtitle[1])
         it["start"] = start
         it["end"] = end
-        it["body"] = subtitle[2]
+        it["body"] = "\n".join(subtitle[2:])
         result.append(it)
     return result
 
