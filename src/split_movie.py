@@ -71,7 +71,7 @@ def RenderSubtitle(image_paths, timestamps, subtitle_file):
         font = ImageFont.truetype("C:\\Windows\\Fonts\\HGRSGU.TTC", 50)
         textbbox = canvas.textbbox((width // 2, height - 50),
                                    subtitles_in_frames[i], font=font,
-                                   anchor="mb")
+                                   anchor="md")
         textbbox = PadBbox(textbbox, 5)
         rect_image = Image.new("RGBA", image.size)
         rect_canvas = ImageDraw.Draw(rect_image)
@@ -80,7 +80,7 @@ def RenderSubtitle(image_paths, timestamps, subtitle_file):
         canvas = ImageDraw.Draw(image)
         canvas.text((width // 2, height - 50),
                     subtitles_in_frames[i], font=font, fill="#FFFFFF",
-                    anchor="mb")
+                    anchor="md", align="center")
         image.save(image_path)
 
 
