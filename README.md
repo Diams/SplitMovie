@@ -26,8 +26,8 @@ $ git clone git@github.com:Diams/SplitMovie.git
 $ create_env.bat
 ```
 
-### 使い方
+## 使い方
 
 ```
-$ python split_movie.py <movie path>.mp4 <subtitle file>.srt
+$ python split_movie.py <movie path>.mp4 <subtitle file>.srt -o <output dircetory>
 ```
