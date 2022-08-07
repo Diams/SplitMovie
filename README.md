@@ -12,7 +12,7 @@ $ git clone git@github.com:Diams/SplitMovie.git
 
 ### 開発環境
 
-- python: 3.9.6
+- python: 3.9.13
 
 ### ライブラリ
 
