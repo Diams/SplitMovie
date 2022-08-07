@@ -43,7 +43,7 @@ def SplitMovie(movie_path: str, output_directory: str):
         _, frame = captured_movie.read()
         current_path = os.path.join(
             output_full_path, f"{int(i[0])}_{int(i[1])}_{i[2]:.3f}.png")
-        cv2.imwrite(current_path, frame)
+        imwrite(current_path, frame)
         paths.append(current_path)
     return paths, timestamps
 
@@ -57,6 +57,21 @@ def GetTimestamps(n_frames: int, fps: float):
         sec = (it - hour * 60 * 60 - minuts * 60)
         result.append((hour, minuts, sec))
     return result
+
+
+def imwrite(filename, img, params=None):
+    try:
+        ext = os.path.splitext(filename)[1]
+        result, n = cv2.imencode(ext, img, params)
+        if result:
+            with open(filename, mode="w+b") as f:
+                n.tofile(f)
+            return True
+        else:
+            return False
+    except Exception as e:
+        print(e)
+        return False
 
 
 def RenderSubtitle(image_paths, timestamps, subtitle_file):
