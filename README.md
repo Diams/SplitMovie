@@ -16,6 +16,10 @@ $ git clone git@github.com:Diams/SplitMovie.git
 
 ### ライブラリ
 
+- opencv-python==4.6.0.66
+- tqdm==4.64.0
+- Pillow==9.2.0
+
 ### コマンド
 
 ```
