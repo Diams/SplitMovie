@@ -105,6 +105,8 @@ def LoadSubtitleFile(file: str):
                      for it in ("".join(f.readlines())).split("\n\n")]
     result = []
     for subtitle in subtitles:
+        if len(subtitle) == 0:
+            continue
         it = {}
         it["num"] = int(subtitle[0])
         start, end = GetTime(subtitle[1])
