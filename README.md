@@ -12,9 +12,13 @@ $ git clone git@github.com:Diams/SplitMovie.git
 
 ### 開発環境
 
-- python: 3.9.6
+- python: 3.9.13
 
 ### ライブラリ
+
+- opencv-python==4.6.0.66
+- tqdm==4.64.0
+- Pillow==9.2.0
 
 ### コマンド
 
@@ -22,8 +26,8 @@ $ git clone git@github.com:Diams/SplitMovie.git
 $ create_env.bat
 ```
 
-### 使い方
+## 使い方
 
 ```
-$ python split_movie.py <movie path>.mp4 <subtitle file>.srt
+$ python split_movie.py <movie path>.mp4 <subtitle file>.srt -o <output dircetory>
 ```
