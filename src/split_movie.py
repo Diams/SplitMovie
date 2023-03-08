@@ -102,6 +102,7 @@ def RenderSubtitle(image_paths, timestamps, subtitle_file):
 def LoadSubtitleFile(file: str):
     with open(file, "r", encoding="utf-8") as f:
         all_text = "".join(f.readlines()).replace("\u2000", "\u3000")
+        all_text = all_text.replace("\u301e", "〟")
     subtitles = [list(filter(lambda x: x != "", it.split("\n")))
                  for it in (all_text).split("\n\n")]
     result = []
